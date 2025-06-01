@@ -4,8 +4,8 @@ import 'izitoast/dist/css/iziToast.min.css';
 import iziToast from 'izitoast';
 
 const refs = {
-  form: document.querySelector('#search-form'),
-  gallery: document.querySelector('#gallery')
+  form: document.querySelector('.form'),
+  gallery: document.querySelector('.gallery')
 }
 
 refs.form.addEventListener('submit', async event => {
@@ -19,22 +19,21 @@ refs.form.addEventListener('submit', async event => {
 
   fetchImages(query)
     .then(data => {
-      hideLoader();
-
       if (data.hits.length === 0) {
         iziToast.settings({
           position: 'topRight',
         });
-        
         iziToast.error({
           message: 'Sorry, there are no images matching your search query. Please try again!'
         });
 
+        hideLoader();
         refs.form.elements.query.value = '';
         return;
       }
 
       renderGallery(data.hits);
+      hideLoader();
     })
     .catch(error => {
       hideLoader();
@@ -45,7 +44,7 @@ refs.form.addEventListener('submit', async event => {
     });
 });
 
-const loader = document.querySelector('#loader');
+const loader = document.querySelector('.loader');
 
 function showLoader() {
   loader.classList.remove('hidden');

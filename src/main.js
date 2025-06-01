@@ -22,9 +22,12 @@ refs.form.addEventListener('submit', async event => {
       hideLoader();
 
       if (data.hits.length === 0) {
-        iziToast.error({
-          message: 'Sorry, there are no images matching your search query. Please try again!',
+        iziToast.settings({
           position: 'topRight',
+        });
+        
+        iziToast.error({
+          message: 'Sorry, there are no images matching your search query. Please try again!'
         });
 
         refs.form.elements.query.value = '';

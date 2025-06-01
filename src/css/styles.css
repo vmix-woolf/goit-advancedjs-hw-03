@@ -16,3 +16,13 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+ul li a {
+  display: block;
+  font-size: 2em;
+  background-image: linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin: 0 auto
+}

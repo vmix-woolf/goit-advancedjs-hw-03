@@ -1,0 +1,55 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряд */
+  gap: 24px;
+  padding: 40px 20px;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.gallery-item {
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-link {
+  display: block;
+  overflow: hidden;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 260px;
+  display: block;
+  object-fit: cover;
+}
+
+.gallery-link:hover .gallery-image {
+  transform: scale(1.03);
+}
+
+.gallery-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 12px;
+  font-size: 10px;
+  color: #333;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.gallery-info p {
+  margin: 0;
+  font-weight: 500;
+}

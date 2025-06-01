@@ -1,6 +1,5 @@
 const BASE_URL = 'https://pixabay.com/api/';
-const API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
-
+const API_KEY = '50620942-86f2c97479190741e85e85db7';
 
 export function fetchImages(query) {
   const params = {
